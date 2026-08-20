@@ -240,8 +240,18 @@ def train_logistic_regression(
 
     return w, b, losses
 
-# Step 20 - predict_labels (not yet solved)
-# TODO: implement
+# Step 20 - predict_labels
+def predict_labels(proba: np.ndarray, threshold: float = 0.5) -> np.ndarray:
+    """Convert predicted probabilities into hard binary labels.
+
+    Args:
+        proba: 1-D array of probabilities in [0, 1], shape (N,).
+        threshold: Decision threshold; proba >= threshold maps to 1.
+
+    Returns:
+        Integer array of shape (N,) with values in {0, 1}.
+    """
+    return (proba >= threshold).astype(int)
 
 # Step 21 - confusion_counts (not yet solved)
 # TODO: implement
