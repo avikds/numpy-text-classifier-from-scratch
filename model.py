@@ -90,8 +90,13 @@ def tokens_to_bow(tokens: list, vocab: dict) -> np.ndarray:
 
     return bow
 
-# Step 8 - corpus_to_bow_matrix (not yet solved)
-# TODO: implement
+# Step 8 - corpus_to_bow_matrix
+def corpus_to_bow_matrix(tokenized_docs: list, vocab: dict) -> np.ndarray:
+    # Convert each document into a BoW vector and stack them into a matrix
+    return np.array(
+        [tokens_to_bow(doc, vocab) for doc in tokenized_docs],
+        dtype=float
+    ).reshape(len(tokenized_docs), len(vocab))
 
 # Step 9 - compute_document_frequencies (not yet solved)
 # TODO: implement
