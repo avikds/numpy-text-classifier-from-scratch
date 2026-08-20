@@ -291,8 +291,34 @@ def metrics_from_counts(tp: int, fp: int, tn: int, fn: int) -> dict:
         'accuracy': float(accuracy)
     }
 
-# Step 23 - tune_decision_threshold (not yet solved)
-# TODO: implement
+# Step 23 - tune_decision_threshold
+def tune_decision_threshold(
+    y_true: np.ndarray,
+    proba: np.ndarray,
+    thresholds: np.ndarray = None
+) -> tuple:
+    # Use the required default threshold grid
+    if thresholds is None:
+        thresholds = np.linspace(0.0, 1.0, 101)
+
+    best_threshold = float(thresholds[0])
+    best_f1 = -1.0
+
+    # Evaluate thresholds in their given order.
+    # Using >? No: predict_labels uses >= threshold.
+    for threshold in thresholds:
+        y_pred = predict_labels(proba, threshold)
+
+        tp, fp, tn, fn = confusion_counts(y_true, y_pred)
+        metrics = metrics_from_counts(tp, fp, tn, fn)
+        f1 = metrics['f1']
+
+        # Strict > preserves the first threshold in case of a tie
+        if f1 > best_f1:
+            best_f1 = f1
+            best_threshold = float(threshold)
+
+    return float(best_threshold), float(best_f1)
 
 # Step 24 - evaluate_predictions (not yet solved)
 # TODO: implement
