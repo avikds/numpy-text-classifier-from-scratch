@@ -134,8 +134,11 @@ def sigmoid(z: np.ndarray) -> np.ndarray:
 
     return result
 
-# Step 14 - logistic_predict_proba (not yet solved)
-# TODO: implement
+# Step 14 - logistic_predict_proba
+def logistic_predict_proba(X: np.ndarray, w: np.ndarray, b: float) -> np.ndarray:
+    # Compute linear scores and convert them to class-1 probabilities
+    scores = X @ w + b
+    return sigmoid(scores)
 
 # Step 15 - binary_cross_entropy (not yet solved)
 # TODO: implement
