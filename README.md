@@ -12,7 +12,7 @@ python scaffold.py
 
 - [x] **1.** clean_text
 - [x] **2.** tokenize
-- [ ] **3.** tokenize_corpus
+- [x] **3.** tokenize_corpus
 - [ ] **4.** split_train_val_test_indices
 - [ ] **5.** count_word_frequencies
 - [ ] **6.** build_vocabulary

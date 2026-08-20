@@ -22,8 +22,10 @@ def tokenize(text: str) -> list:
     # Split on any whitespace and remove empty tokens
     return text.split()
 
-# Step 3 - tokenize_corpus (not yet solved)
-# TODO: implement
+# Step 3 - tokenize_corpus
+def tokenize_corpus(texts: list) -> list:
+    # Clean and tokenize each document while preserving order
+    return [tokenize(clean_text(text)) for text in texts]
 
 # Step 4 - split_train_val_test_indices (not yet solved)
 # TODO: implement
