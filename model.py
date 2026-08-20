@@ -161,8 +161,29 @@ def binary_cross_entropy(
 
     return float(bce + l2_penalty)
 
-# Step 16 - logistic_gradients (not yet solved)
-# TODO: implement
+# Step 16 - logistic_gradients
+def logistic_gradients(
+    X: np.ndarray,
+    y_true: np.ndarray,
+    y_prob: np.ndarray,
+    w: np.ndarray,
+    l2_lambda: float
+) -> tuple:
+    """Compute gradients of BCE+L2 w.r.t. weights and bias for one full batch."""
+    
+    # Error between predicted probabilities and true labels
+    error = y_prob - y_true
+
+    # Gradient of BCE with respect to weights
+    dw = (X.T @ error) / X.shape[0]
+
+    # Add L2 regularization gradient
+    dw += l2_lambda * w
+
+    # Gradient of BCE with respect to bias
+    db = float(np.mean(error))
+
+    return dw, db
 
 # Step 17 - initialize_logistic_params (not yet solved)
 # TODO: implement

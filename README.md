@@ -25,7 +25,7 @@ python scaffold.py
 - [x] **13.** sigmoid
 - [x] **14.** logistic_predict_proba
 - [x] **15.** binary_cross_entropy
-- [ ] **16.** logistic_gradients
+- [x] **16.** logistic_gradients
 - [ ] **17.** initialize_logistic_params
 - [ ] **18.** gradient_descent_step
 - [ ] **19.** train_logistic_regression
