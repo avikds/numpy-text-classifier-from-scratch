@@ -38,6 +38,15 @@ python scaffold.py
 - [x] **26.** predict_text
 - [x] **27.** collect_prediction_errors
 
----
+## Results
 
-Built on Deep-ML.
+```
+vocab_size 40
+final_train_loss 0.0354
+best_threshold 0.66 val_f1 1.0
+test_metrics {'tp': 1, 'fp': 0, 'tn': 2, 'fn': 1, 'precision': 1.0, 'recall': 0.5, 'f1': 0.667, 'accuracy': 0.75}
+sample_text Free prize click here to claim now
+sample_pred 1
+n_false_positives 0
+n_false_negatives 1
+```
