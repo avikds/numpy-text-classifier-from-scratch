@@ -351,8 +351,25 @@ def vectorize_texts(texts: list, vocab: dict, idf: np.ndarray) -> np.ndarray:
     # Apply the fitted IDF vector
     return transform_tfidf(bow_matrix, idf)
 
-# Step 26 - predict_text (not yet solved)
-# TODO: implement
+# Step 26 - predict_text
+def predict_text(
+    text: str,
+    vocab: dict,
+    idf: np.ndarray,
+    w: np.ndarray,
+    b: float,
+    threshold: float = 0.5
+) -> int:
+    """Label a single raw message with the fitted classifier."""
+
+    # Reuse the existing text vectorization pipeline
+    features = vectorize_texts([text], vocab, idf)
+
+    # Compute the class-1 probability
+    proba = logistic_predict_proba(features, w, b)
+
+    # Convert probability to a binary label
+    return int(predict_labels(proba, threshold)[0])
 
 # Step 27 - collect_prediction_errors (not yet solved)
 # TODO: implement

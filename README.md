@@ -35,7 +35,7 @@ python scaffold.py
 - [x] **23.** tune_decision_threshold
 - [x] **24.** evaluate_predictions
 - [x] **25.** vectorize_texts
-- [ ] **26.** predict_text
+- [x] **26.** predict_text
 - [ ] **27.** collect_prediction_errors
 
 ---
