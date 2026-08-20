@@ -78,8 +78,17 @@ def build_vocabulary(word_counts: dict, max_size: int) -> dict:
     # Assign indices according to rank order
     return {word: index for index, (word, _) in enumerate(sorted_words)}
 
-# Step 7 - tokens_to_bow (not yet solved)
-# TODO: implement
+# Step 7 - tokens_to_bow
+def tokens_to_bow(tokens: list, vocab: dict) -> np.ndarray:
+    # Create a zero-filled float vector with one entry per vocabulary word
+    bow = np.zeros(len(vocab), dtype=float)
+
+    # Count only tokens that are present in the vocabulary
+    for token in tokens:
+        if token in vocab:
+            bow[vocab[token]] += 1.0
+
+    return bow
 
 # Step 8 - corpus_to_bow_matrix (not yet solved)
 # TODO: implement
