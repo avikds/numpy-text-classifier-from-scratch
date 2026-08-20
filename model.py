@@ -7,6 +7,8 @@ Assembled from your step-by-step solutions.
 import numpy as np
 
 # Step 1 - clean_text
+import numpy as np
+
 def clean_text(text: str) -> str:
     # Lowercase the text and replace every non-alphabetic character with a space
     cleaned = ''.join(
@@ -263,8 +265,31 @@ def confusion_counts(y_true: np.ndarray, y_pred: np.ndarray) -> tuple:
 
     return tp, fp, tn, fn
 
-# Step 22 - metrics_from_counts (not yet solved)
-# TODO: implement
+# Step 22 - metrics_from_counts
+def metrics_from_counts(tp: int, fp: int, tn: int, fn: int) -> dict:
+    # Precision
+    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+
+    # Recall
+    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+
+    # F1 score
+    f1 = (
+        2.0 * precision * recall / (precision + recall)
+        if (precision + recall) > 0
+        else 0.0
+    )
+
+    # Accuracy
+    total = tp + fp + tn + fn
+    accuracy = (tp + tn) / total if total > 0 else 0.0
+
+    return {
+        'precision': float(precision),
+        'recall': float(recall),
+        'f1': float(f1),
+        'accuracy': float(accuracy)
+    }
 
 # Step 23 - tune_decision_threshold (not yet solved)
 # TODO: implement
