@@ -26,7 +26,7 @@ python scaffold.py
 - [x] **14.** logistic_predict_proba
 - [x] **15.** binary_cross_entropy
 - [x] **16.** logistic_gradients
-- [ ] **17.** initialize_logistic_params
+- [x] **17.** initialize_logistic_params
 - [ ] **18.** gradient_descent_step
 - [ ] **19.** train_logistic_regression
 - [ ] **20.** predict_labels

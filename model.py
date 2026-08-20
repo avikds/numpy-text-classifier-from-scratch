@@ -185,8 +185,13 @@ def logistic_gradients(
 
     return dw, db
 
-# Step 17 - initialize_logistic_params (not yet solved)
-# TODO: implement
+# Step 17 - initialize_logistic_params
+def initialize_logistic_params(n_features: int) -> tuple:
+    # Return zero-initialized weights and a zero bias
+    w = np.zeros(n_features, dtype=float)
+    b = 0.0
+
+    return w, b
 
 # Step 18 - gradient_descent_step (not yet solved)
 # TODO: implement
