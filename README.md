@@ -22,7 +22,7 @@ python scaffold.py
 - [x] **10.** compute_idf
 - [x] **11.** transform_tfidf
 - [x] **12.** fit_tfidf
-- [ ] **13.** sigmoid
+- [x] **13.** sigmoid
 - [ ] **14.** logistic_predict_proba
 - [ ] **15.** binary_cross_entropy
 - [ ] **16.** logistic_gradients

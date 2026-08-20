@@ -121,8 +121,18 @@ def fit_tfidf(bow_train: np.ndarray) -> np.ndarray:
     # Compute the smoothed IDF using the number of training documents
     return compute_idf(df, bow_train.shape[0])
 
-# Step 13 - sigmoid (not yet solved)
-# TODO: implement
+# Step 13 - sigmoid
+def sigmoid(z: np.ndarray) -> np.ndarray:
+    # Numerically stable logistic sigmoid
+    result = np.empty_like(z, dtype=float)
+
+    positive = z >= 0
+    result[positive] = 1.0 / (1.0 + np.exp(-z[positive]))
+
+    exp_z = np.exp(z[~positive])
+    result[~positive] = exp_z / (1.0 + exp_z)
+
+    return result
 
 # Step 14 - logistic_predict_proba (not yet solved)
 # TODO: implement
