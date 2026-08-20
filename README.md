@@ -20,7 +20,7 @@ python scaffold.py
 - [x] **8.** corpus_to_bow_matrix
 - [x] **9.** compute_document_frequencies
 - [x] **10.** compute_idf
-- [ ] **11.** transform_tfidf
+- [x] **11.** transform_tfidf
 - [ ] **12.** fit_tfidf
 - [ ] **13.** sigmoid
 - [ ] **14.** logistic_predict_proba
