@@ -19,7 +19,7 @@ python scaffold.py
 - [x] **7.** tokens_to_bow
 - [x] **8.** corpus_to_bow_matrix
 - [x] **9.** compute_document_frequencies
-- [ ] **10.** compute_idf
+- [x] **10.** compute_idf
 - [ ] **11.** transform_tfidf
 - [ ] **12.** fit_tfidf
 - [ ] **13.** sigmoid
