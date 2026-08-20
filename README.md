@@ -36,7 +36,7 @@ python scaffold.py
 - [x] **24.** evaluate_predictions
 - [x] **25.** vectorize_texts
 - [x] **26.** predict_text
-- [ ] **27.** collect_prediction_errors
+- [x] **27.** collect_prediction_errors
 
 ---
 

@@ -371,6 +371,24 @@ def predict_text(
     # Convert probability to a binary label
     return int(predict_labels(proba, threshold)[0])
 
-# Step 27 - collect_prediction_errors (not yet solved)
-# TODO: implement
+# Step 27 - collect_prediction_errors
+def collect_prediction_errors(
+    texts: list,
+    y_true: np.ndarray,
+    y_pred: np.ndarray
+) -> dict:
+    # Gather false positives and false negatives in original text order
+    false_positives = []
+    false_negatives = []
+
+    for text, true_label, pred_label in zip(texts, y_true, y_pred):
+        if true_label == 0 and pred_label == 1:
+            false_positives.append(text)
+        elif true_label == 1 and pred_label == 0:
+            false_negatives.append(text)
+
+    return {
+        'false_positives': false_positives,
+        'false_negatives': false_negatives
+    }
 
