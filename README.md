@@ -11,7 +11,7 @@ python scaffold.py
 ## Steps
 
 - [x] **1.** clean_text
-- [ ] **2.** tokenize
+- [x] **2.** tokenize
 - [ ] **3.** tokenize_corpus
 - [ ] **4.** split_train_val_test_indices
 - [ ] **5.** count_word_frequencies
