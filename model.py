@@ -27,8 +27,31 @@ def tokenize_corpus(texts: list) -> list:
     # Clean and tokenize each document while preserving order
     return [tokenize(clean_text(text)) for text in texts]
 
-# Step 4 - split_train_val_test_indices (not yet solved)
-# TODO: implement
+# Step 4 - split_train_val_test_indices
+def split_train_val_test_indices(
+    n_samples: int,
+    val_fraction: float,
+    test_fraction: float,
+    seed: int = 0
+) -> tuple:
+    # Seed NumPy's RNG
+    np.random.seed(seed)
+
+    # Create and shuffle a fresh array of indices
+    indices = np.arange(n_samples)
+    np.random.shuffle(indices)
+
+    # Calculate split sizes using truncation
+    n_val = int(n_samples * val_fraction)
+    n_test = int(n_samples * test_fraction)
+    n_train = n_samples - n_val - n_test
+
+    # Split in the required order: train, validation, test
+    train_idx = indices[:n_train]
+    val_idx = indices[n_train:n_train + n_val]
+    test_idx = indices[n_train + n_val:]
+
+    return train_idx, val_idx, test_idx
 
 # Step 5 - count_word_frequencies (not yet solved)
 # TODO: implement
